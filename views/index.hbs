@@ -1,0 +1,21 @@
+<h1>Welcome to the Movie Project</h1>
+<div class="movies-wrapper">
+  {{#each movies}}
+    <div class="movie-item">
+      <img src="{{this.imgPath}}" alt="">
+      <h4>{{this.title}}</h4>
+      <p>{{this.description}}</p>
+    </div>
+  {{else}}
+    <p>There are no movies yet! :(</p>
+  {{/each}}
+</div>
+
+<section>
+  <h2>Upload your photo</h2>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="text" name="name">
+    <input type="file" name="photo">
+    <input type="submit" value="Save">
+  </form>
+</section>
